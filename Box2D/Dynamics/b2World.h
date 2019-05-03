@@ -133,6 +133,9 @@ public:
 	b2Joint* GetJointList();
 	const b2Joint* GetJointList() const;
 
+	// Update contact list to the current state of the world.
+	void UpdateContacts();
+
 	/// Get the world contact list. With the returned contact, use b2Contact::GetNext to get
 	/// the next contact in the world list. A nullptr contact indicates the end of the list.
 	/// @return the head of the world contact list.

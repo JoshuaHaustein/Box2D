@@ -894,6 +894,17 @@ void b2World::SolveTOI(const b2TimeStep& step)
 	}
 }
 
+void b2World::UpdateContacts() 
+{
+	m_contactManager.FindNewContacts();
+	// // If new fixtures were added, we need to find the new contacts.
+	// if (m_flags & e_newFixture)
+	// {
+	// 	m_flags &= ~e_newFixture;
+	// }
+	m_contactManager.Collide();
+}
+
 void b2World::Step(float32 dt, int32 velocityIterations, int32 positionIterations)
 {
 	b2Timer stepTimer;
